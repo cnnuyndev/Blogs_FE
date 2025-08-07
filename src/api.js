@@ -1,21 +1,7 @@
-// import axios from "axios";
-
-// export const BASE_URL = "http://localhost:8000/api";
-// export const BASE_URL_IMG = "http://localhost:8000";
-// const api = axios.create({
-//   baseURL: BASE_URL,
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-// });
-
-// export default api;
-
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-export const BASE_URL = import.meta.VITE_BASE_URL;
-export const BASE_URL_IMG = import.meta.VITE_BASE_URL_IMG;
+export const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const api = axios.create({
   baseURL: BASE_URL,

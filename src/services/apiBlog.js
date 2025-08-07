@@ -2,7 +2,7 @@ import api from "@/api";
 
 export const fetchPosts = async (page) => {
   try {
-    const response = await api.get(`/blog_list/?page=${page}`);
+    const response = await api.get(`/api/blog_list/?page=${page}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -12,7 +12,7 @@ export const fetchPosts = async (page) => {
 
 export async function getBlog(slug) {
   try {
-    const response = await api.get(`blogs/${slug}`);
+    const response = await api.get(`/api/blogs/${slug}`);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -21,7 +21,7 @@ export async function getBlog(slug) {
 
 export const registerUser = async (data) => {
   try {
-    const response = await api.post("register_user/", data);
+    const response = await api.post("api/register_user/", data);
     return response.data;
   } catch (error) {
     if (error.status === 400) {
@@ -33,7 +33,7 @@ export const registerUser = async (data) => {
 
 export const SignIn = async (token) => {
   try {
-    const response = await api.post("token/", token);
+    const response = await api.post("api/token/", token);
     return response.data;
   } catch (error) {
     if (error.status === 401) {
@@ -45,7 +45,7 @@ export const SignIn = async (token) => {
 
 export const getInforUser = async (username) => {
   try {
-    const response = await api.get(`get_userinfo/${username}`);
+    const response = await api.get(`api/get_userinfo/${username}`);
     return response.data;
   } catch (error) {
     throw new Error(error.message);
@@ -54,7 +54,7 @@ export const getInforUser = async (username) => {
 
 export async function getUsername() {
   try {
-    const response = await api.get("get_username/");
+    const response = await api.get("api/get_username/");
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -63,7 +63,7 @@ export async function getUsername() {
 
 export async function updateProfile(data) {
   try {
-    const response = await api.put(`update_user/`, data);
+    const response = await api.put(`api/update_user/`, data);
     return response.data;
   } catch (err) {
     console.log(err);
@@ -79,7 +79,7 @@ export async function updateProfile(data) {
 
 export async function createBlog(data) {
   try {
-    const response = await api.post("create_blog/", data);
+    const response = await api.post("api/create_blog/", data);
     return response.data;
   } catch (err) {
     throw new Error(err.message);
@@ -88,7 +88,7 @@ export async function createBlog(data) {
 
 export async function updateBlog(data, id) {
   try {
-    const response = await api.put(`update_blog/${id}/`, data);
+    const response = await api.put(`api/update_blog/${id}/`, data);
     return response.data;
   } catch (err) {
     if (err.response) {
@@ -101,7 +101,7 @@ export async function updateBlog(data, id) {
 
 export async function deleteBlog(id) {
   try {
-    const response = await api.post(`delete_blog/${id}/`);
+    const response = await api.post(`api/delete_blog/${id}/`);
     return response.data;
   } catch (err) {
     if (err.response) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import  Pic from '@/images/pic.jpg'
 import { FormatDate } from '@/services/fortmatDate'
-import { BASE_URL_IMG } from '@/api'
+import { BASE_URL } from '@/api'
 const BlogWriter = ({blog}) => {
   return (
     <div>
@@ -9,7 +9,7 @@ const BlogWriter = ({blog}) => {
       <span className="flex items-center gap-2">
         <div className="w-[40px] h-[40px] rounded-full overflow-hidden">
           <img
-            src={`${BASE_URL_IMG}${blog?.author?.profile_picture}`}
+            src={`${BASE_URL}${blog?.author?.profile_picture}`}
             className="c rounded-full w-full h-full object-cover"
           />
         </div>

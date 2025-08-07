@@ -3,14 +3,14 @@ import Badge from './Badge'
 import CardFooter from './CardFooter'
 import Design from '../images/design_vii.jpg'
 import { Link } from 'react-router-dom'
-import {BASE_URL_IMG} from '@/api'
+import {BASE_URL} from '@/api'
 const BlogCard = ({ post }) => {
   return (
     <div className="px-3 py-3 rounded-md w-[350px] h-auto flex flex-col gap-4 dark:border-gray-800 border shadow-lg">
       <Link to={`/blogs/${post.slug}`}>
       <div className="w-full h-[200px] border rounded-md overflow-hidden">
         <img
-          src={`${BASE_URL_IMG}${post.featured_image}`}
+          src={`${BASE_URL}${post.featured_image}`}
           className="w-full h-full object-cover rounded-lg"
         />
       </div>

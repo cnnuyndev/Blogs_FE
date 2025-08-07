@@ -1,17 +1,15 @@
 import React from 'react'
-import Pic from '@/images/pic.jpg'
 import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa'
 import { BsTwitterX } from "react-icons/bs";
-import { BASE_URL_IMG } from '@/api';
+import { BASE_URL } from '@/api';
 import { HiPencilAlt } from "react-icons/hi";
 const Hero = ({userInfo, authUsername, toggleModal}) => {
-  console.log(userInfo?.username, authUsername)
   return (
     <div className="padding-x py-9 max-container flex flex-col items-center justify-center gap-4 bg-[#F6F6F7] dark:bg-[#2d2f3d] rounded-md">
       <div className="flex gap-4">
         <div className="w-[70px] h-[70px] rounded-full overflow-hidden">
           <img
-            src={`${BASE_URL_IMG}${userInfo?.profile_picture}`}
+            src={`${BASE_URL}${userInfo?.profile_picture}`}
             className="w-[70px] h-[70px] rounded-full object-cover"
           />
         </div>

@@ -10,9 +10,9 @@ import SmallSpinner from '@/ui_components/SmalSpinner';
 import SmallSpinnerText from '@/ui_components/SmaillPinnerText';
 import {updateProfile} from '@/services/apiBlog'
 import { Link } from 'react-router-dom';
-
+import InputError from '@/ui_components/InputError';
 const SignUpPage = ({ userInfo, updateForm, toggleModal }) => {
-  
+
   const queryClient = useQueryClient()
   const { register, handleSubmit, formState, reset, watch } = useForm({defaultValues: userInfo ? userInfo : {}});
   const { errors } = formState;

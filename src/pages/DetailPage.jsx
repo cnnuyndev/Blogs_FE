@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query'
 import { getBlog, deleteBlog } from '@/services/apiBlog'
 import Spinner from '@/ui_components/Spinner'
 import { useParams } from "react-router-dom";
-import { BASE_URL_IMG } from '@/api'
+import { BASE_URL } from '@/api'
 import { useNavigate } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { toast } from 'react-toastify'
@@ -80,7 +80,7 @@ const DetailPage = ({ username, isAuthenticated }) => {
           <div className="w-full h-[350px] my-9 overflow-hidden rounded-sm">
             <img
               className="w-full h-full object-cover rounded-sm"
-              src={`${BASE_URL_IMG}${blog?.featured_image}`}
+              src={`${BASE_URL}${blog?.featured_image}`}
             />
           </div>
           <p className="text-[16px] leading-[2rem] text-justify text-[#3B3C4A] dark:text-[#BABABF]">

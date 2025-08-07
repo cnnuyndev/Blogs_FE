@@ -8,7 +8,7 @@ import DetailsPage from '@/pages/DetailPage'
 import SignUpPage from './pages/SignUpPage'
 import CreatePostPage from './pages/CreatePostPage'
 // import { Routes } from 'react-router-dom'
-import ProtectedRouter from './ui_components/protectedRouter'
+import ProtectedRoute from './ui_components/ProtectedRouter';
 import {
   useQuery,
   // useMutation,
@@ -59,7 +59,7 @@ const MainApp = () => {
           <Route path="signup/" element={<SignUpPage />} />
           <Route path="signin/" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="profile/:username" element={<ProfilePage authUsername = {username}/>} />
-          <Route path="createpost" element={<ProtectedRouter><CreatePostPage isAuthenticated={isAuthenticated} /></ProtectedRouter>} />
+          <Route path="createpost" element={<ProtectedRoute><CreatePostPage isAuthenticated={isAuthenticated} /></ProtectedRoute>} />
         </Route>
       </Routes>
     </BrowserRouter>
